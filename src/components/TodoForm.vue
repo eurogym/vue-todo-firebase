@@ -1,21 +1,22 @@
 <template>
-  <form @submit.prevent="addTodo">
-    <MDBInput type="text" v-model="newTodo" placeholder="Add a todo" />
-    <MDBBtn color="primary">Add</MDBBtn>
+  <form action="">
+    <label for="">Title</label>
+    <input type="text"><br>
+    <label for="">Description</label>
+    <textarea id="" cols="30" rows="10"></textarea><br>
+    <label for="">Due Date</label>
+    <input type="date"><br>
+    <button>add</button>
+    <button>cancel</button>
   </form>
 </template>
 
 <script>
-import { MDBInput, MDBBtn } from 'mdb-vue-ui-kit';
 
 export default {
-  components: {
-    MDBInput,
-    MDBBtn
-  },
-}
+};
 </script>
 
 <style>
-
 </style>
+
