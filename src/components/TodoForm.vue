@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import TodoDataService from "../components/TodoForm.vue"
+
 export default {
   name: "TodoForm",
   data() {
@@ -22,6 +24,17 @@ export default {
         duedate: new Date().toISOString().slice(0, 10),
         done: false
       },
+    }
+  },
+  methodes: {
+    addTodoItem() {
+      TodoDataService.create(this.todoitem)
+        .then(() => {
+          console.log("New todoitem created in firestore")
+        })
+        .catch(e => {
+          console.log(e)
+        })
     }
   }
 }
