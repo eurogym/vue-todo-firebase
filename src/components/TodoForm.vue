@@ -24,17 +24,6 @@ export default {
         done: false
       },
     }
-  },
-  methods: {
-    addTodoItem() {      
-      TodoDataService.create(this.todoitem)
-        .then(() => {
-          console.log("New todoitem created in firestore")
-        })
-        .catch(e => {
-          console.log(e)
-        })
-    }
   }
 }
 </script>
