@@ -1,21 +1,23 @@
-import firebase from "../firebase"
-const db = firebase.ref("/todoitems")
+import firebase  from "../firebase"
+
+const collTodoItems = firebase.collection('/todoItems')
+
 
 class TodoDataService {
   getAll() {
-    return db;
+    return collTodoItems.getAll()
   }
   create(todoitem) {
-    return db.push(todoitem)
+    return collTodoItems.doc().set(todoitem)
   }
   update(key, value){
-    return db.child(key).update(value)
+    return collTodoItems.child(key).update(value)
   }
   delete(key){
-    return db.child(key).remove()
+    return collTodoItems.child(key).remove()
   }
   deleteAll(){
-    return db.remove()
+    return collTodoItems.remove()
   }
 }
 

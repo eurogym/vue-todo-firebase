@@ -1,5 +1,5 @@
 <template>
-  <form action="">
+  <form @submit.prevent="addTodoItem">
     <label for="">Title</label>
     <input type="text" v-model="todoitem.title"><br>
     <label for="">Description</label>
@@ -7,12 +7,11 @@
     <label for="">Due Date</label>
     <input type="date" v-model="todoitem.duedate"><br>
     <button>add</button>
-    <button>cancel</button>
   </form>
 </template>
 
 <script>
-import TodoDataService from "../components/TodoForm.vue"
+import TodoDataService from "../services/TodoDataService.js"
 
 export default {
   name: "TodoForm",
@@ -26,8 +25,8 @@ export default {
       },
     }
   },
-  methodes: {
-    addTodoItem() {
+  methods: {
+    addTodoItem() {      
       TodoDataService.create(this.todoitem)
         .then(() => {
           console.log("New todoitem created in firestore")
