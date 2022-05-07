@@ -5,7 +5,7 @@ const collTodoItems = firebase.collection('/todoItems')
 
 class TodoDataService {
   getAll() {
-    return collTodoItems.getAll()
+    return collTodoItems
   }
   create(todoitem) {
     return collTodoItems.doc().set(todoitem)
