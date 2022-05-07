@@ -1,12 +1,12 @@
 <template>
   <form @submit.prevent="addTodoItem">
-    <label for="">Title</label>
-    <input type="text" v-model="todoitem.title"><br>
-    <label for="">Description</label>
-    <textarea id="" cols="30" rows="10" v-model="todoitem.description"></textarea><br>
-    <label for="">Due Date</label>
-    <input type="date" v-model="todoitem.duedate"><br>
-    <button>add</button>
+    <label for="title" class="form-label">Title</label>
+    <input id="title" class="form-control" type="text" v-model="todoitem.title"><br>
+    <label for="description" class="form-label">Description</label>
+    <textarea id="description" class="form-control" cols="30" rows="10" v-model="todoitem.description"></textarea><br>
+    <label for="duedate" class="form-label">Due Date</label>
+    <input id="duedate" class="form-control" type="date" v-model="todoitem.duedate"><br>
+    <button class="btn btn-primary">add</button>
   </form>
 </template>
 
