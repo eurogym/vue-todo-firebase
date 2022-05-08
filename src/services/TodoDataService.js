@@ -11,13 +11,13 @@ class TodoDataService {
     return collTodoItems.doc().set(todoitem)
   }
   update(key, value){
-    return collTodoItems.child(key).update(value)
+    return collTodoItems.doc(key).update(value)
   }
   delete(key){
-    return collTodoItems.child(key).remove()
+    return collTodoItems.doc(key).delete()
   }
   deleteAll(){
-    return collTodoItems.remove()
+    return collTodoItems.deleteAll()
   }
 }
 
